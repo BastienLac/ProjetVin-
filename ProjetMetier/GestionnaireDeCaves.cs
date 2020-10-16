@@ -18,12 +18,19 @@ namespace ProjetMetier
         public void AjouterCave(string unNomDeCave,List<Bouteille> lesBouteillesDeLaCave)
         {
             // A vous de jouer
+            LesCaves.Add(unNomDeCave, lesBouteillesDeLaCave);
         }
 
         public int NbBouteilles(string unNomDeCave)
         {
             // A vous de jouer
-            return 0;
+            int nbBouteilles = 0;
+            foreach(Bouteille bou in lesCaves[unNomDeCave])
+            {
+                nbBouteilles = nbBouteilles + 1;
+            }
+            
+            return nbBouteilles;
         }
 
         public int NbBouteillesDeRouges(string unNomDeCave)
