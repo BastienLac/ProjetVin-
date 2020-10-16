@@ -36,13 +36,29 @@ namespace ProjetMetier
         public int NbBouteillesDeRouges(string unNomDeCave)
         {
             // A vous de jouer
-            return 0;
+            int nbBouteillesDeRouges = 0;
+            foreach (Bouteille bou in lesCaves[unNomDeCave])
+            {
+                if(bou.LeVin.LaCouleur.NomCouleur == "Rouge")
+                {
+                    nbBouteillesDeRouges = nbBouteillesDeRouges + 1;
+                }
+               
+            }
+            return nbBouteillesDeRouges;
         }
 
         public double ValeurDeLaCave(string unNomDeCave)
         {
             // A vous de jouer
-            return 0;
+            double valeur = 0;
+            foreach(Bouteille bou in lesCaves[unNomDeCave])
+            {
+               double quantité = bou.QuantiteBouteille;
+               double prix = bou.LeVin.PrixDuVin;
+               valeur = valeur + (quantité * prix);
+            }
+            return valeur;
         }
     }
 }

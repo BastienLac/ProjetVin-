@@ -149,8 +149,8 @@ namespace ProjetWPF
             Bouteille b19 = new Bouteille(19, 37, vin19);
 
             Bouteille b20 = new Bouteille(20, 92, vin20);
-            bouteillesSIO1.Add(b1); bouteillesSIO1.Add(b2); bouteillesSIO1.Add(b3); bouteillesSIO1.Add(b4); bouteillesSIO1.Add(b5); bouteillesSIO1.Add(b6);
-            bouteillesSIO2.Add(b8); bouteillesSIO2.Add(b7); bouteillesSIO2.Add(b9); bouteillesSIO2.Add(b20); bouteillesSIO2.Add(b18); bouteillesSIO2.Add(b15);
+            bouteillesSIO1.Add(b1); bouteillesSIO1.Add(b2); bouteillesSIO1.Add(b3); bouteillesSIO1.Add(b4); bouteillesSIO1.Add(b5); bouteillesSIO1.Add(b6); bouteillesSIO1.Add(b16);
+            bouteillesSIO2.Add(b8); bouteillesSIO2.Add(b7); bouteillesSIO2.Add(b9); bouteillesSIO2.Add(b20);  bouteillesSIO2.Add(b15);
             bouteillesSIO3.Add(b13); bouteillesSIO3.Add(b16); bouteillesSIO3.Add(b5); bouteillesSIO3.Add(b9); bouteillesSIO3.Add(b19);
             lvCaves.ItemsSource = gst.LesCaves.Keys;
         }
@@ -161,6 +161,9 @@ namespace ProjetWPF
             if(lvCaves.SelectedItem != null)
             {
                 lvBouteilles.ItemsSource = gst.LesCaves[lvCaves.SelectedItem as string];
+                txtNbBouteilles.Text = gst.NbBouteilles(lvCaves.SelectedItem as string).ToString();
+                txtNbBouteillesDeRouges.Text = gst.NbBouteillesDeRouges(lvCaves.SelectedItem as string).ToString();
+                txtValeurDeLaCave.Text = gst.ValeurDeLaCave(lvCaves.SelectedItem as string).ToString();
             }
         }
 
